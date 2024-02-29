@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     parameters {
+        
         booleanParam(name: 'CHECKOUT', defaultValue: true, description: 'Toggle this value')
         booleanParam(name: 'BUILD', defaultValue: true, description: 'Toggle this value')
         booleanParam(name: 'TEST', defaultValue: true, description: 'Toggle this value')
@@ -20,12 +21,12 @@ pipeline {
                //        branches: [[name: '*/main']],
                  //      userRemoteConfigs: [[url: 'https://github.com/jaintpharsha/applications.git',
                    //    credentialsId: 'github']]])
-            // }
+                     
 
-             steps {
+            steps {
                 checkout([$class: 'GitSCM',
                        branches: [[name: '*/main']],
-                       userRemoteConfigs: [[url: 'https://github.com/jaintpharsha/applications.git',
+                       userRemoteConfigs: [[url: '',
                        credentialsId: 'github']]])
             }
             
